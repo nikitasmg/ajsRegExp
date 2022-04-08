@@ -31,4 +31,5 @@ export class Character {
             this.health -= points * (1 - this.defense / 100)
         }
     }
+
 }
