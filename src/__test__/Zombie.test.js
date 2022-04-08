@@ -1,6 +1,7 @@
 import {Zombie} from "../Zombie";
 import {Swordsman} from "../Swordsman";
 import {Undead} from "../Undead";
+import Bowerman from "../Bowerman";
 
 test.each([
     ['test1',
@@ -30,6 +31,10 @@ test.each([
 
 test('should return error', () => {
     expect(() => new Zombie('a', 'a')).toThrow('Не корректные значения')
+})
+
+test('should return error', () => {
+    expect(() => new Zombie('Zombie', 'asdasd')).toThrow('Не корректные значения')
 })
 
 test.each([

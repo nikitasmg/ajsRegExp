@@ -1,18 +1,19 @@
 import {Swordsman} from "../Swordsman";
+import {Undead} from "../Undead";
 test.each([
     ['test1',
-        {name:'sword',type:'sword'},
+        {name:'sword',type:'Swordsman'},
         {name: 'sword',
-            type: 'sword',
+            type: 'Swordsman',
             health: 100,
             level: 1,
             attack: 40,
             defense: 10
         }],
     ['test2',
-        {name:'player',type:'sword'},
+        {name:'player',type:'Swordsman'},
         {name: 'player',
-            type: 'sword',
+            type: 'Swordsman',
             health: 100,
             level: 1,
             attack: 40,
@@ -26,7 +27,7 @@ test.each([
 });
 
 test('should return error', () => {
-    expect(() => new Swordsman('a', 'a')).toThrow('Не корректные значения')
+    expect(() => new Swordsman('a', 'Swordsman')).toThrow('Не корректные значения')
 })
 
 test.each([
@@ -59,5 +60,9 @@ test('should return error', () => {
     const result = new Swordsman('Swordsman','Swordsman');
     result.health = -1
     expect(() => result.levelUp().toThrow('you are died'));
+})
+
+test('should return error', () => {
+    expect(() => new Swordsman('Swordsman', 'asdasd')).toThrow('Не корректные значения')
 })
 

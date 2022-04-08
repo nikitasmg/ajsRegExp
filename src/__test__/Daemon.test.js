@@ -1,4 +1,5 @@
 import {Daemon} from "../Daemon";
+import {Swordsman} from "../Swordsman";
 test.each([
     ['test1',
         {name:'Daemon',type:'Daemon'},
@@ -24,6 +25,11 @@ test.each([
     const result = new Daemon(name, type);
     expect(result).toEqual(expected);
 });
+
+test('should return error', () => {
+    expect(() => new Daemon('Daemon', 'asdasd')).toThrow('Не корректные значения')
+})
+
 
 test('should return error', () => {
     expect(() => new Daemon('a', 'a')).toThrow('Не корректные значения')

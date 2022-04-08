@@ -27,7 +27,11 @@ test.each([
 });
 
 test('should return error', () => {
-    expect(() => new Undead('a', 'a')).toThrow('Не корректные значения')
+    expect(() => new Undead('a', 'Undead')).toThrow('Не корректные значения')
+})
+
+test('should return error', () => {
+    expect(() => new Undead('Undead', 'asdasd')).toThrow('Не корректные значения')
 })
 
 test.each([

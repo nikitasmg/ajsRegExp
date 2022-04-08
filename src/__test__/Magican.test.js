@@ -1,4 +1,5 @@
 import {Magician} from "../Magician";
+import {Daemon} from "../Daemon";
 
 test.each([
     ['test1',
@@ -61,4 +62,9 @@ test('should return error', () => {
     result.health = -1
     expect(() => result.levelUp().toThrow('you are died'));
 })
+
+test('should return error', () => {
+    expect(() => new Magician('Magician', 'asdasd')).toThrow('Не корректные значения')
+})
+
 
