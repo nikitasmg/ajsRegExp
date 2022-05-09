@@ -52,6 +52,5 @@ test.each([
 ])('should return ordered obj ', (_, resolve, expected) => {
     const {obj, props} = resolve
     const result = orderByProps(obj,props)
-    console.log(result)
     expect(result).toEqual(expected);
 });
